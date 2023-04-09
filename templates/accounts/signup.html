@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  회원가입
+{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="wrap">
+      <h2 class="title-center">
+        회원가입
+      </h2>
+      <form class="form-area" method="POST" action="signup">
+        {% csrf_token %}
+        <div class="form-group mt-2 mb-2">
+          <label for="username">username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder='username'>
+        </div>
+        <div class="form-group mt-2 mb-2">
+          <label for="firstname">firstname</label>
+          <input type="text" class="form-control" id="firstname" name="firstname" placeholder='firstname'>
+        </div>
+        <div class="form-group mt-2 mb-2">
+          <label for="lastname">lastname</label>
+          <input type="text" class="form-control" id="lastname" name="lastname" placeholder='lastname'>
+        </div>
+        <div class="form-group mt-2 mb-2">
+          <label for="email">email</label>
+          <input type="text" class="form-control" id="email" name="email" placeholder='example@example.com'>
+        </div>
+        <div class="form-group mt-2 mb-2">
+          <label for="password">password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder='password'>
+        </div>
+        <div class="form-group mt-2 mb-2">
+          <label for="password2">password again</label>
+          <input type="password" class="form-control" id="password2" name="password2" placeholder='password again'>
+        </div>
+        <hr>
+        <div style="float: right">
+          <button type="submit" class="btn btn-primary">회원가입</button>
+          <a href="{% url 'user:signin' %}" class="btn btn-secondary">로그인 페이지로</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  상품등록
+{% endblock %}
+{% block content %}
+  <div class="container">
+    <div class="wrap">
+      <h2 class="title-center">
+        상품등록
+      </h2>
+      <form class="form-area" method="POST" action="product_create">
+        {% csrf_token %}
+        <div class="form-group mt-2 mb-2">
+          <label for="productname">product name</label>
+          <input type="text" class="form-control" id="productname" name="productname" placeholder='productname'>
+        </div>
+        <div class="form-group mt-2 mb-2">
+          <label for="productcode">product code</label>
+          <input type="text" class="form-control" id="productcode" name="productcode" placeholder='productnumber'>
+        </div>
+        <hr>
+        <div style="float: right">
+          <button type="submit" class="btn btn-primary">상품등록</button>
+          {% comment %} <a href="{% url 'user:signin' %}" class="btn btn-secondary">상품목록</a> {% endcomment %}
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}
